@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Picker</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="tabs">
+            <button class="tab-btn active">Pick from Image</button>
+        </nav>
+
+        <div class="main-content">
+            <div class="image-section">
+                <div class="image-container">
+                    <img src="bg.png" id="image" alt="Selected image">
+                </div>
+
+                <div class="palette-section">
+                    <h4>Palette</h4>
+                    <div id="palette"></div>
+                </div>
+            </div>
+
+            <div class="color-info">
+                <div class="window-controls">
+                    <span class="control-dot red"></span>
+                    <span class="control-dot yellow"></span>
+                    <span class="control-dot green"></span>
+                    <h4>Colors</h4>
+                </div>
+                
+                <div class="color-values">
+                    <div class="color-field">
+                        <div class="color-preview" id="picked-color"></div>
+                        <div class="color-inputs">
+                            <div class="input-group">
+                                <label>HEX:</label>
+                                <input type="text" id="hex-input" readonly>
+                                <button class="copy-btn" onclick="copyToClipboard('hex-input')">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="input-group">
+                                <label>RGB:</label>
+                                <input type="text" id="rgb-input" readonly>
+                                <button class="copy-btn" onclick="copyToClipboard('rgb-input')">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <input type="file" id="file" accept="image/*">
+                    <label for="file" class="upload-btn">Choose Image</label>
+                    <button id="pick-btn" class="pick-btn">Pick Color</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
